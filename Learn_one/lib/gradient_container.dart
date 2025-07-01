@@ -3,21 +3,19 @@ import 'package:flutter/material.dart';
 import 'text_app.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.warna1, this.warna2, {super.key});
+  final Color warna1, warna2;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Color.fromARGB(255, 216, 33, 245),
-            Color.fromARGB(255, 67, 48, 136),
-          ],
+          colors: [warna1, warna2],
         ),
       ),
-      child: const Center(child: TextApp()),
+      child: const Center(child: TextApp('Halo Dunia!')),
     );
   }
 }
