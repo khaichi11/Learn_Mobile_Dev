@@ -4,11 +4,11 @@ import 'gradient_container.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
         body: GradientContainer(
-          Color.fromARGB(255, 216, 33, 245),
-          Color.fromARGB(255, 67, 48, 136),
+          const Color.fromARGB(255, 216, 33, 245),
+          const Color.fromARGB(255, 67, 48, 136),
         ),
       ),
     ),
