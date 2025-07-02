@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget {
@@ -10,10 +12,10 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var gambarDaduAktif = 'assets/images/2.png';
+  var gambarDaduAktif = 2;
   void acakDadu() {
     setState(() {
-      gambarDaduAktif = 'assets/images/5.png';
+      gambarDaduAktif = Random().nextInt(6) + 1;
     });
   }
 
@@ -26,7 +28,7 @@ class _DiceRollerState extends State<DiceRoller> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
-              image: AssetImage(gambarDaduAktif),
+              image: AssetImage('assets/images/$gambarDaduAktif.png'),
               fit: BoxFit.cover,
             ),
           ),
