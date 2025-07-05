@@ -23,6 +23,10 @@ class StartScreen extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage('assets/brain_logo_app_khai_2.png'),
                   fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Color.fromARGB(11, 255, 255, 255),
+                    BlendMode.srcATop,
+                  ),
                 ),
               ),
               width: 300,
@@ -38,14 +42,15 @@ class StartScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            OutlinedButton(
+            OutlinedButton.icon(
               onPressed: () {},
               style: OutlinedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 184, 123, 215),
                 foregroundColor: Color.fromARGB(255, 255, 255, 255),
                 side: BorderSide(color: Color.fromARGB(255, 184, 123, 215)),
               ),
-              child: Text('Mulai Quiz'),
+              icon: Icon(Icons.quiz_outlined),
+              label: Text('Mulai Quiz'),
             ),
           ],
         ),
