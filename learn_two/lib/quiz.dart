@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'start_screen.dart';
+import 'question_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -10,6 +10,19 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  var activeScreen;
+  @override
+  // bisa untuk menyimpan nilai awal agar bisa digunakan
+  // void initState() {
+  //   activeScreen = StartScreen(switchScreen);
+  //   super.initState();
+  // }
+  void switchScreen() {
+    setState(() {
+      activeScreen = QuestionScreen();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +38,7 @@ class _QuizState extends State<Quiz> {
               ],
             ),
           ),
-          child: StartScreen(),
+          child: activeScreen,
         ),
       ),
     );
