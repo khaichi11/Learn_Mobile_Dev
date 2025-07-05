@@ -29,7 +29,24 @@ class StartScreen extends StatelessWidget {
               height: 300,
             ),
             SizedBox(height: 20),
-            OutlinedButton(onPressed: () {}, child: Text('Start Quiz')),
+            Text(
+              "Belajar Flutter dengan cara yang menyenangkan",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 184, 123, 215),
+                foregroundColor: Color.fromARGB(255, 255, 255, 255),
+                side: BorderSide(color: Color.fromARGB(255, 184, 123, 215)),
+              ),
+              child: Text('Mulai Quiz'),
+            ),
           ],
         ),
       ),
