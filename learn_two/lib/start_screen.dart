@@ -16,7 +16,7 @@ class StartScreen extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            "Belajar Flutter dengan cara yang menyenangkan",
+            "Latihan soal mekanikal robotiik!",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
