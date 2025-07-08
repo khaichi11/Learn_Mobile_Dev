@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_two/question_screen.dart';
 
+import 'data/questions.dart';
 import 'start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -11,7 +12,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  final List<String> selectedAnswer = [];
+  List<String> selectedAnswer = [];
   var activeScreen = 'start-screen';
   // bisa untuk menyimpan nilai awal agar bisa digunakan
   // void initState() {
@@ -26,7 +27,13 @@ class _QuizState extends State<Quiz> {
 
   void chooseAnswer(String answer) {
     selectedAnswer.add(answer);
-    print(selectedAnswer);
+    if (selectedAnswer.length == questions.length) {
+      setState(() {
+        selectedAnswer = [];
+        activeScreen = 'start-screen';
+      });
+    }
+    // print(selectedAnswer);
   }
 
   @override
