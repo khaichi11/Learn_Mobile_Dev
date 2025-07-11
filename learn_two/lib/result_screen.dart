@@ -40,6 +40,11 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               'Kamu berhasil menjawab $numCorrectQuestions dari $numTotalQuestions pertanyaan secara benar!',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 30),
             QuestionSummary(summaryData),

@@ -17,14 +17,52 @@ class QuestionSummary extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(((data['question_index'] as int) + 1).toString()),
+                      Container(
+                        width: 30,
+                        height: 30,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color:
+                              isCorrect
+                                  ? Color.fromARGB(216, 180, 253, 155)
+                                  : Color.fromARGB(213, 255, 123, 161),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text(
+                          ((data['question_index'] as int) + 1).toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
                       Expanded(
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(data['question'] as String),
+                            Text(
+                              data['question'] as String,
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                             SizedBox(height: 5),
-                            Text(data['user_answer'] as String),
-                            Text(data['correct_answer'] as String),
+                            Text(
+                              'Jawaban Kamu : ${data['user_answer'] as String}',
+                              style: TextStyle(
+                                color:
+                                    isCorrect
+                                        ? Color.fromARGB(245, 151, 248, 106)
+                                        : Color.fromARGB(255, 255, 151, 151),
+                              ),
+                            ),
+                            Text(
+                              'Jawaban yang sebenarnya : ${data['correct_answer'] as String}',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ],
                         ),
                       ),
